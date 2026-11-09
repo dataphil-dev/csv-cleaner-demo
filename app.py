@@ -373,14 +373,14 @@ with right:
     got = dict(zip(report["Step"], report["Changed"]))
     def n(prefix):
         return int(sum(v for k, v in got.items() if k.startswith(prefix)))
-    removed = [f"{n(k)} {w}" for k, w in (("Remove exact", "duplicates"), ("Remove empty", "empty rows"),
-                                          ("Remove total", "total lines"), ("Skip title", "title rows"))] 
-    removed = [r for r in removed if not r.startswith("0 ")]
+    removed = [f"{n(k)} {w if n(k) > 1 else w1}" for k, w, w1 in (
+        ("Remove exact", "duplicate rows", "duplicate row"), ("Remove empty", "empty rows", "empty row"),
+        ("Remove total", "total lines", "total line"), ("Skip title", "title rows", "title row")) if n(k)]
     lines = []
     if removed:
         lines.append(f"<b>Removed</b> {', '.join(removed)}")
     if n("Unify") + n("Standardise"):
-        lines.append(f"<b>Merged</b> {n('Unify') + n('Standardise')} different spellings of names and countries")
+        lines.append(f"<b>Unified</b> the spelling in {n('Unify') + n('Standardise')} cells (names and countries)")
     if n("Dates") + n("Numbers"):
         lines.append(f"<b>Converted</b> {n('Dates')} dates and {n('Numbers')} amounts so Excel can calculate with them")
     if n("Trim"):
