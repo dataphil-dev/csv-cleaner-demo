@@ -198,30 +198,31 @@ GREY, LIGHT, PAPER, WARN = "#9AA3B2", "#D3D9E3", "#F4F5F8", "#B4531A"
 CSS = """<style>
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif&display=swap');
 html, body, .stApp, .stMarkdown, p, label, button, input, textarea, select, li {font-family:'IBM Plex Sans',system-ui,sans-serif;}
-.block-container {padding-top:2rem; max-width:1200px;}
-h1 {font-family:'Instrument Serif',Georgia,serif !important; font-weight:400 !important; font-size:2.9rem !important;
+.block-container {padding-top:2.2rem; max-width:1180px;}
+h1 {font-family:'Instrument Serif',Georgia,serif !important; font-weight:400 !important; font-size:2.8rem !important;
     color:#0E1A2F !important; letter-spacing:-.01em; line-height:1.05 !important; padding:0 !important;}
-.dp-bar {font-family:'IBM Plex Mono',monospace; font-size:.78rem; color:#C3CCDB; background:#0E1A2F;
-    padding:.55rem 1rem; border-radius:10px; display:flex; justify-content:space-between; margin-bottom:1.1rem;}
-.dp-bar b {font-weight:400; color:#fff; background:#17253F; border-radius:20px; padding:0 .6rem;}
-.dp-lead {color:#5A5E66; font-size:1rem; margin:.2rem 0 1.2rem;}
-.dp-kpi {background:#fff; border:1px solid #D3D9E3; border-radius:12px; padding:.85rem 1rem; height:100%;}
+.dp-lead {color:#5A5E66; font-size:1.02rem; margin:.35rem 0 1.5rem; max-width:48rem;}
+.dp-lead b {color:#0E1A2F; font-weight:500;}
+.dp-chip {font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.08em; color:#1E3A6E;
+    background:#E7EBF2; border-radius:20px; padding:.15rem .6rem; margin-left:.5rem; vertical-align:middle; white-space:nowrap;}
+.dp-step {font-family:'IBM Plex Mono',monospace; font-size:.72rem !important; letter-spacing:.14em; color:#5A5E66; margin:0 0 .5rem;}
+.dp-answer {background:#0E1A2F; color:#fff; border-radius:14px; padding:1.15rem 1.4rem 1.25rem; margin-bottom:.9rem;}
+.dp-answer .k {font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.14em; color:#9DB6E3;}
+.dp-answer .big {font-family:'Instrument Serif',Georgia,serif; font-size:3.1rem; line-height:1.05; margin:.25rem 0 .55rem;}
+.dp-answer .big.warn {color:#F2B48C;}
+.dp-answer p {color:#D6DEEB; margin:0; font-size:1rem; line-height:1.55;}
+.dp-answer p b {color:#fff; font-weight:500;}
+.dp-kpi {background:#fff; border:1px solid #D3D9E3; border-radius:12px; padding:.75rem 1rem; height:100%;}
 .dp-kpi .l {font-size:.82rem; color:#5A5E66;}
-.dp-kpi .v {font-size:1.75rem; font-weight:500; color:#0E1A2F; line-height:1.25; margin:.15rem 0;}
+.dp-kpi .v {font-size:1.5rem; font-weight:500; color:#0E1A2F; line-height:1.25; margin:.1rem 0;}
 .dp-kpi .c {font-size:.8rem; color:#5A5E66;} .dp-kpi .c.warn {color:#B4531A;}
-.dp-msg {background:#0E1A2F; color:#fff; border-radius:12px; padding:1rem 1.25rem; margin:1rem 0 1.4rem; font-size:1.02rem; line-height:1.5;}
-.dp-msg .k {display:block; font-family:'IBM Plex Mono',monospace; font-size:.7rem; letter-spacing:.14em; color:#9DB6E3; margin-bottom:.2rem;}
-.dp-h {font-weight:600; font-size:1.08rem; color:#0E1A2F; margin:.6rem 0 0;}
+.dp-h {font-weight:600; font-size:1.05rem; color:#0E1A2F; margin:0; padding-top:1.3rem;}
 .dp-sub {font-size:.84rem; color:#5A5E66; margin:0 0 .4rem;}
-.dp-steps {display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:1.4rem;}
-.dp-steps div {border:1px solid #D3D9E3; border-radius:12px; padding:.9rem 1rem; font-size:.88rem; color:#3D4047; background:#fff;}
-.dp-steps div.r {background:#1E3A6E; color:#fff; border-color:#1E3A6E;}
-.dp-steps span {display:block; font-family:'IBM Plex Mono',monospace; font-size:.68rem; letter-spacing:.14em; color:#5A5E66; margin-bottom:.3rem;}
-.dp-steps div.r span {color:#9DB6E3;}
-.dp-src {font-family:'IBM Plex Mono',monospace; font-size:.78rem; color:#3D4047; line-height:1.9;}
-.dp-src i {color:#2E7D4F; font-style:normal; margin-right:.4rem;}
-.dp-note {background:#E7EBF2; border-radius:10px; padding:.7rem .9rem; font-size:.8rem; color:#3D4047; margin-top:1rem;}
-@media (max-width:700px){ .dp-steps {grid-template-columns:1fr;} h1 {font-size:2.2rem !important;} }
+.dp-try {font-size:.84rem; color:#3D4047; background:#E7EBF2; border-radius:10px; padding:.6rem .8rem; margin-top:.4rem;}
+.dp-note {font-size:.78rem; color:#5A5E66; margin-top:.5rem;}
+.dp-list {margin:.2rem 0 0; padding-left:1.1rem; color:#3D4047; font-size:.92rem; line-height:1.7;}
+.dp-list b {color:#0E1A2F; font-weight:500;}
+@media (max-width:700px){ h1 {font-size:2.1rem !important;} .dp-answer .big {font-size:2.4rem;} }
 </style>"""
 
 
@@ -229,8 +230,21 @@ def esc(s) -> str:
     return html.escape(str(s))
 
 
-def bar(left: str, right: str = "Sample data"):
-    st.markdown(f'<div class="dp-bar"><span>{esc(left)}</span><b>{esc(right)}</b></div>', unsafe_allow_html=True)
+def header(title: str, lead_html: str, sample: bool = True):
+    st.title(title)
+    chip = '<span class="dp-chip">SAMPLE DATA</span>' if sample else ""
+    st.markdown(f'<p class="dp-lead">{lead_html}{chip}</p>', unsafe_allow_html=True)
+
+
+def step(label: str, where=st):
+    where.markdown(f'<p class="dp-step">{esc(label)}</p>', unsafe_allow_html=True)
+
+
+def answer(label: str, big: str, text_html: str, warn=False, where=st):
+    """The one thing the user came for: a big number or verdict, and one sentence that explains it."""
+    where.markdown(f'<div class="dp-answer"><span class="k">{esc(label)}</span>'
+                   f'<div class="big{" warn" if warn else ""}">{esc(big)}</div><p>{text_html}</p></div>',
+                   unsafe_allow_html=True)
 
 
 def kpi(col, label, value, context="", warn=False):
@@ -239,23 +253,17 @@ def kpi(col, label, value, context="", warn=False):
                  unsafe_allow_html=True)
 
 
-def message(text_html: str, label="MESSAGE FOR THE MEETING"):
-    st.markdown(f'<div class="dp-msg"><span class="k">{label}</span>{text_html}</div>', unsafe_allow_html=True)
+def heading(title: str, sub: str = "", where=st):
+    where.markdown(f'<p class="dp-h">{esc(title)}</p>' + (f'<p class="dp-sub">{esc(sub)}</p>' if sub else ""),
+                   unsafe_allow_html=True)
 
 
-def heading(title: str, sub: str = ""):
-    st.markdown(f'<p class="dp-h">{esc(title)}</p>' + (f'<p class="dp-sub">{esc(sub)}</p>' if sub else ""),
-                unsafe_allow_html=True)
+def try_hint(text_html: str, where=st):
+    where.markdown(f'<div class="dp-try"><b>Try it:</b> {text_html}</div>', unsafe_allow_html=True)
 
 
-def sources(files):
-    st.markdown("<p class='dp-sub' style='letter-spacing:.12em;font-family:IBM Plex Mono'>DATA SOURCES</p>"
-                + "".join(f"<div class='dp-src'><i>✓</i>{esc(f)}</div>" for f in files), unsafe_allow_html=True)
-
-
-def steps(before: str, tool: str, result: str):
-    st.markdown(f'<div class="dp-steps"><div><span>1 · BEFORE</span>{before}</div><div><span>2 · THE TOOL</span>{tool}'
-                f'</div><div class="r"><span>3 · RESULT</span>{result}</div></div>', unsafe_allow_html=True)
+def note(text: str, where=st):
+    where.markdown(f'<div class="dp-note">{esc(text)}</div>', unsafe_allow_html=True)
 
 
 def chart_style(chart):
@@ -266,26 +274,36 @@ def chart_style(chart):
 
 
 # ------------------------------------------------------------------ UI
-st.set_page_config(page_title="CSV cleaner (demo)", page_icon="🧹", layout="wide")
+st.set_page_config(page_title="CSV cleaner (demo)", page_icon="🧹", layout="wide", initial_sidebar_state="collapsed")
 st.markdown(CSS, unsafe_allow_html=True)
 
-with st.sidebar:
-    up = st.file_uploader("Your own CSV or Excel file (optional)", type=["csv", "txt", "xlsx"])
-    sources([up.name if up else SAMPLE.name])
-    st.markdown("<p class='dp-h' style='margin-top:1.2rem'>Cleaning steps</p>", unsafe_allow_html=True)
-    opts = {
-        "trim": st.checkbox("Trim extra spaces", True),
-        "empty": st.checkbox("Remove empty rows", True),
-        "totals": st.checkbox("Remove total rows", True),
-        "dupes": st.checkbox("Remove exact duplicates", True),
-        "case": st.checkbox("Unify upper/lower case", True),
-        "country": st.checkbox("Standardise country names", True),
-        "dates": st.checkbox("Convert dates to one format", True),
-        "numbers": st.checkbox("Convert amounts to numbers", True),
-        "us_slash": st.radio("Dates like 3/4/2026 mean", ["month/day (US)", "day/month"]) == "month/day (US)",
-    }
-    st.markdown("<div class='dp-note'>Runs in your browser. Your file is not uploaded anywhere and not stored."
-                "</div>", unsafe_allow_html=True)
+header("Can we trust the numbers in this export?",
+       "A monthly order export with title rows, duplicates, mixed spellings and amounts stored as text. "
+       "<b>Put the messy file in, get a clean table and the correct totals out.</b>",
+       sample=st.session_state.get("upload") is None)
+
+left, right = st.columns([1, 2], gap="large")
+with left:
+    step("1 · THE FILE")
+    with st.container(border=True):
+        up = st.file_uploader("Your own CSV or Excel file (optional)", type=["csv", "txt", "xlsx"], key="upload")
+        if not up:
+            st.caption(f"Using the sample file {SAMPLE.name}")
+        us = st.radio("Dates like 3/4/2026 mean", ["month/day (US)", "day/month"], horizontal=True)
+        with st.expander("Cleaning steps"):
+            opts = {
+                "trim": st.checkbox("Trim extra spaces", True),
+                "empty": st.checkbox("Remove empty rows", True),
+                "totals": st.checkbox("Remove total rows", True),
+                "dupes": st.checkbox("Remove exact duplicates", True),
+                "case": st.checkbox("Unify upper/lower case", True),
+                "country": st.checkbox("Standardise country names", True),
+                "dates": st.checkbox("Convert dates to one format", True),
+                "numbers": st.checkbox("Convert amounts to numbers", True),
+            }
+        opts["us_slash"] = us == "month/day (US)"
+    try_hint("open <b>Cleaning steps</b> and untick <b>Convert amounts to numbers</b>.", left)
+    note("Runs in your browser. Your file is not uploaded anywhere and not stored.", left)
 
 name, raw = (up.name, up.getvalue()) if up else (SAMPLE.name, SAMPLE.read_bytes())
 try:
@@ -307,117 +325,76 @@ if cust_col is None:
     cust_col = cands[0] if cands else None
 cur = "€" if re.search(rb"\xe2\x82\xac|EUR", raw) else ""
 plain = re.compile(r"^\s*-?\d+(\.\d+)?\s*$")
-n_check = int((clean_df["Issues"] != "").sum())
+flagged = clean_df["Issues"] != ""
+n_check = int(flagged.sum())
 
+excel_sum = clean_sum = None
 if amount_col is not None and pos.get(amount_col, 99) < len(raw_cols):
     raw_amount = raw_df.iloc[:, pos[amount_col]].astype(str)
     excel_sum = sum(float(v) for v in raw_amount if plain.match(v))     # what SUM() sees: real numbers only
     clean_sum = float(clean_df[amount_col].sum())
-else:
-    excel_sum = clean_sum = None
+raw_n = clean_n = None
 if cust_col is not None and pos.get(cust_col, 99) < len(raw_cols):
     raw_names = raw_df.iloc[:, pos[cust_col]].astype(str)
     raw_n = raw_names[raw_names.str.strip() != ""]
     raw_n = raw_n[~raw_n.str.strip().str.lower().isin(TOTAL_WORDS)].str.lower().nunique()  # like a pivot table
     clean_n = clean_df[cust_col][clean_df[cust_col] != ""].nunique()
-else:
-    raw_n = clean_n = None
 
-bar("data-cleaner.local · order export")
-st.title("Messy export in, clean table out")
-st.markdown("<p class='dp-lead'>A typical order export with title rows, duplicates, four spellings of the same "
-            "country and amounts stored as text. Upload your own file in the sidebar to try it.</p>",
-            unsafe_allow_html=True)
-
-removed = len(raw_df) - len(clean_df)
-k1, k2, k3, k4 = st.columns(4)
-kpi(k1, "Rows", f"{len(raw_df)} → {len(clean_df)}", f"{removed} duplicate, empty or total rows removed")
-if raw_n is not None:
-    kpi(k2, f"Distinct {cust_col.lower()}s", f"{raw_n} → {clean_n}", "a pivot table would list each spelling",
-        warn=raw_n != clean_n)
-else:
-    kpi(k2, "Columns", f"{len(clean_df.columns) - 1}", "no name column found")
-if excel_sum is not None:
-    gap = (excel_sum - clean_sum) / clean_sum if clean_sum else 0
-    kpi(k3, f"Total {amount_col.lower()}", f"{cur}{clean_sum:,.0f}",
-        f"Excel SUM on the raw file: {cur}{excel_sum:,.0f} ({gap:+.0%})", warn=abs(gap) > 0.01)
-else:
-    kpi(k3, "Number columns", str(len(num_cols)), "converted from text")
-kpi(k4, "Rows to check", str(n_check), "missing values are flagged, never guessed" if n_check else "nothing missing",
-    warn=n_check > 0)
-
-parts = []
-if excel_sum is not None and abs(excel_sum - clean_sum) > 0.5:
-    parts.append(f"A SUM over the raw file gives <b>{cur}{excel_sum:,.0f}</b>, the correct total is "
-                 f"<b>{cur}{clean_sum:,.0f}</b>: amounts written as text were skipped and duplicates counted twice.")
-if raw_n is not None and raw_n != clean_n:
-    parts.append(f"<b>{raw_n} {cust_col.lower()} names</b> are really <b>{clean_n}</b>.")
-parts.append(f"<b>{n_check} rows</b> miss a value and need a short look." if n_check
-             else "No missing values.")
-message(" ".join(parts), "WHAT CHANGED, IN ONE SENTENCE")
-
-left, right = st.columns([1, 1], gap="large")
-with left:
-    rep = report[~report["Step"].str.startswith(("Missing", "Skip"))].copy()
-    rep = rep[rep["Changed"] > 0]
-    rep["Step"] = rep["Step"].str.replace(r" \(.*\)$", "", regex=True)
-    rep["Step"] = (rep["Step"].str.replace(r"^Dates in '(.+)' to one format.*$", r"Dates in \1", regex=True)
-                   .str.replace(r"^Numbers in '(.+)'.*$", r"Amounts in \1", regex=True))
-    if len(rep):
-        topstep = rep.sort_values("Changed", ascending=False).iloc[0]["Step"]
-        heading("What was wrong in the export", "Cells or rows changed per cleaning step")
-        ch = alt.Chart(rep).encode(
-            y=alt.Y("Step:N", sort="-x", title=None, axis=alt.Axis(labelLimit=260, ticks=False, domain=False,
-                                                                   labelPadding=8)),
-            x=alt.X("Changed:Q", axis=None, scale=alt.Scale(domain=[0, rep["Changed"].max() * 1.2])))
-        b = ch.mark_bar(cornerRadiusEnd=3, height=18).encode(
-            color=alt.condition(alt.datum.Step == topstep, alt.value(NAVY), alt.value(LIGHT)))
-        t = ch.mark_text(align="left", dx=6, color=BODY, fontSize=12).encode(text="Changed:Q")
-        st.altair_chart(chart_style((b + t).properties(height=34 * len(rep) + 10)), use_container_width=True)
 with right:
-    if amount_col and cust_col:
-        by = clean_df.groupby(cust_col)[amount_col].sum().sort_values(ascending=False).reset_index()
-        by.columns = ["Name", "Value"]
-        share = by["Value"].iloc[0] / by["Value"].sum() if by["Value"].sum() else 0
-        heading(f"{by['Name'].iloc[0]} is the largest {cust_col.lower()} ({share:.0%})",
-                f"{amount_col} per {cust_col.lower()}, after cleaning. Only now can you add them up.")
-        top10 = by.head(10)
-        ch = alt.Chart(top10).encode(
-            y=alt.Y("Name:N", sort="-x", title=None, axis=alt.Axis(labelLimit=200, ticks=False, domain=False,
-                                                                   labelPadding=8)),
-            x=alt.X("Value:Q", axis=None, scale=alt.Scale(domain=[0, top10["Value"].max() * 1.25])))
-        b = ch.mark_bar(cornerRadiusEnd=3, height=18).encode(
-            color=alt.condition(alt.datum.Name == by["Name"].iloc[0], alt.value(NAVY), alt.value(LIGHT)))
-        t = ch.mark_text(align="left", dx=6, color=BODY, fontSize=12).encode(
-            text=alt.Text("Value:Q", format=",.0f"))
-        st.altair_chart(chart_style((b + t).properties(height=34 * len(top10) + 10)), use_container_width=True)
+    step("2 · THE RESULT")
+    if excel_sum is not None and clean_sum:
+        gap = (excel_sum - clean_sum) / clean_sum
+        text = (f"Summing the raw export in Excel gives <b>{cur}{excel_sum:,.0f}</b> ({gap:+.0%}): amounts stored "
+                f"as text are skipped and duplicate rows count twice." if abs(gap) > 0.005
+                else "The raw export already added up correctly; the cleaning mostly fixed names and dates.")
+        answer(f"CORRECT TOTAL {amount_col.upper()}", f"{cur}{clean_sum:,.0f}", text)
+    else:
+        answer("CLEAN ROWS", f"{len(clean_df)}", f"From {len(raw_df)} rows in the export. "
+               "No amount column was found, so no total is shown.")
 
-tab1, tab2, tab3 = st.tabs(["Clean table", "Before / after", "Cleaning log"])
+    k1, k2, k3 = st.columns(3)
+    kpi(k1, "Clean rows", f"{len(clean_df)}", f"from {len(raw_df)} rows in the export")
+    if raw_n is not None:
+        kpi(k2, f"{cust_col}s", f"{clean_n}", f"the raw file looks like {raw_n} (different spellings)"
+            if raw_n != clean_n else "no duplicate spellings found", warn=raw_n != clean_n)
+    else:
+        kpi(k2, "Columns", f"{len(clean_df.columns) - 1}", "no name column found")
+    kpi(k3, "Rows to check", f"{n_check}", "missing values are flagged, never guessed" if n_check
+        else "nothing missing", warn=n_check > 0)
+
+    st.write("")
+    d1, d2 = st.columns([3, 2])
+    d1.download_button("Download the clean Excel file", to_excel(clean_df, report), file_name="clean_data.xlsx",
+                       type="primary", use_container_width=True)
+    d2.download_button("Clean CSV", clean_df.to_csv(index=False).encode("utf-8"),
+                       file_name="clean_data.csv", mime="text/csv", use_container_width=True)
+
+    heading("What was fixed", "Every change is logged in the Excel file, sheet 'Cleaning report'.")
+    got = dict(zip(report["Step"], report["Changed"]))
+    def n(prefix):
+        return int(sum(v for k, v in got.items() if k.startswith(prefix)))
+    removed = [f"{n(k)} {w}" for k, w in (("Remove exact", "duplicates"), ("Remove empty", "empty rows"),
+                                          ("Remove total", "total lines"), ("Skip title", "title rows"))] 
+    removed = [r for r in removed if not r.startswith("0 ")]
+    lines = []
+    if removed:
+        lines.append(f"<b>Removed</b> {', '.join(removed)}")
+    if n("Unify") + n("Standardise"):
+        lines.append(f"<b>Merged</b> {n('Unify') + n('Standardise')} different spellings of names and countries")
+    if n("Dates") + n("Numbers"):
+        lines.append(f"<b>Converted</b> {n('Dates')} dates and {n('Numbers')} amounts so Excel can calculate with them")
+    if n("Trim"):
+        lines.append(f"<b>Trimmed</b> {n('Trim')} stray spaces")
+    items = "".join(f"<li>{t}</li>" for t in lines)
+    st.markdown(f'<ul class="dp-list">{items}</ul>', unsafe_allow_html=True)
+
+heading("The clean table", "Rows that need a look are shaded; the 'Issues' column says why.")
 dcfg = {c: st.column_config.DateColumn(format="YYYY-MM-DD") for c in date_cols}
 dcfg.update({c: st.column_config.NumberColumn(format="%.2f") for c in num_cols
              if not str(clean_df[c].dtype).startswith("Int")})
-with tab1:
-    flagged = clean_df["Issues"] != ""
-    st.dataframe(clean_df.style.apply(lambda r: ["background-color:#FBEDE4" if flagged[r.name] else ""] * len(r),
-                                      axis=1),
-                 hide_index=True, use_container_width=True, height=380, column_config=dcfg)
-    st.caption("Rows that need a look are shaded. The 'Issues' column says why.")
-with tab2:
-    l, r = st.columns(2)
-    l.markdown("<p class='dp-sub'>Before (as exported)</p>", unsafe_allow_html=True)
-    l.dataframe(raw_df, hide_index=True, use_container_width=True, height=380)
-    r.markdown("<p class='dp-sub'>After</p>", unsafe_allow_html=True)
-    r.dataframe(clean_df, hide_index=True, use_container_width=True, height=380, column_config=dcfg)
-with tab3:
-    st.dataframe(report, hide_index=True, use_container_width=True, height=(len(report) + 1) * 35 + 3)
-    st.caption("Every step is logged, so you can check what was changed and why.")
-
-d1, d2 = st.columns(2)
-d1.download_button("Download clean Excel (data + log)", to_excel(clean_df, report),
-                   file_name="clean_data.xlsx", type="primary", use_container_width=True)
-d2.download_button("Download clean CSV", clean_df.to_csv(index=False).encode("utf-8"),
-                   file_name="clean_data.csv", mime="text/csv", use_container_width=True)
-
-steps("Every month someone fixes the same export by hand: delete title rows, merge spellings, retype amounts.",
-      "Applies the same rules in seconds, logs every change and flags what it cannot decide.",
-      "Numbers you can add up. Try it: untick <b>Convert amounts to numbers</b> and watch the total drop.")
+order = clean_df.index[flagged].tolist() + clean_df.index[~flagged].tolist()      # rows to check first
+show = clean_df.loc[order]
+st.dataframe(show.style.apply(lambda r: ["background-color:#FBEDE4" if flagged[r.name] else ""] * len(r), axis=1),
+             hide_index=True, use_container_width=True, height=320, column_config=dcfg)
+with st.expander("Compare with the raw export"):
+    st.dataframe(raw_df, hide_index=True, use_container_width=True, height=320)
