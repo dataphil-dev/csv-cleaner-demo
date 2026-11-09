@@ -1,0 +1,69 @@
+Order export - BrightSpace Cleaning (demo)
+exported 2026-10-01
+Invoice No; Date;Customer;Country;Service;Qty;Amount 
+INV-1001;2026-09-07;  Greenleaf Market ;Austria;Window cleaning;1;120.00 EUR
+INV-1002;19.01.2026;  Bluebird Cafe ;AT;Deep clean;1;340.00
+INV-1003;27.09.2026;Bluebird Cafe;Austria;Carpet care;1;162,00
+INV-1004;9/14/2026;OAKLINE STUDIO;Schweiz;Office cleaning;4;342.00 EUR
+INV-1005;17.05.2026;Oakline Studio;Schweiz;Window cleaning;3;324.00 EUR
+INV-1006;05.06.2026;summit legal;CH;Deep clean;4;1360.00
+INV-1007;2026-08-03;Greenleaf Market ;Österreich;Office cleaning;3;285.00
+INV-1008;01.06.2026;pinecrest hotel;AT;Office cleaning;3;285.00
+INV-1004;9/14/2026;OAKLINE STUDIO;Schweiz;Office cleaning;4;342.00 EUR
+INV-1009;28.07.2026;OAKLINE STUDIO;CH;Office cleaning;1;95.00 EUR
+INV-1010;22.06.2026;PINECREST HOTEL;Austria;Office cleaning;2;190.00
+INV-1011;2026-05-10;RIVERSIDE BAKERY;Austria;Deep clean;2;€ 680,00
+INV-1012;13.07.2026;RIVERSIDE BAKERY;Österreich;Office cleaning;1;95.00 EUR
+INV-1013;2026-06-20;Harbor Physio ;Germany;Window cleaning;1;120,00
+INV-1014;7/5/2026;  Bluebird Cafe ;Österreich;Deep clean;3;€ 918,00
+INV-1015;03.05.2026;RIVERSIDE BAKERY;Austria;Office cleaning;1;€ 85,50
+INV-1016;2026-03-23;oakline studio;Switzerland;Carpet care;3;486.00
+INV-1017;9/18/2026;GREENLEAF MARKET;AT;Deep clean;2;612,00
+INV-1018;1/1/2026;  Riverside Bakery ;austria;Carpet care;4;720,00
+INV-1019;04.04.2026;Greenleaf Market ;Austria;Window cleaning;4;€ 480,00
+INV-1020;2026-02-27;riverside bakery;Austria;Carpet care;4;648,00
+INV-1021;2026-07-24;  Summit Legal ;Schweiz;Office cleaning;2;
+INV-1017;9/18/2026;GREENLEAF MARKET;AT;Deep clean;2;612,00
+INV-1022;05.06.2026;  Harbor Physio ;DE;Office cleaning;1;95.00
+INV-1023;5/7/2026;OAKLINE STUDIO;Switzerland;Window cleaning;2;€ 216,00
+;;;;;;
+INV-1024;14.09.2026;Greenleaf Market ;Austria;Office cleaning;2;171.00
+INV-1025;2026-03-16;Harbor Physio ;Germany;Deep clean;1;340.00 EUR
+INV-1026;2026-05-02;  Oakline Studio ;CH;Deep clean;4;1224.00
+INV-1027;17.08.2026;OAKLINE STUDIO;CH;Carpet care;2;€ 324,00
+INV-1028;13.02.2026;harbor physio;Germany;Office cleaning;3;285,00
+INV-1029;09.03.2026;HARBOR PHYSIO;DE;Carpet care;4;720.00
+INV-1030;14.06.2026;Summit Legal ;CH;Office cleaning;;285.00
+INV-1031;7/11/2026;riverside bakery;austria;Window cleaning;1;120,00
+INV-1032;25.05.2026;Northwind Dental ;Deutschland;Deep clean;4;€ 1.224,00
+INV-1033;02.05.2026;greenleaf market;Austria;Window cleaning;4;€ 480,00
+INV-1029;09.03.2026;HARBOR PHYSIO;DE;Carpet care;4;720.00
+INV-1034;2026-05-28;oakline studio;Schweiz;Window cleaning;4;€ 480,00
+INV-1035;23.09.2026;harbor physio;germany;Window cleaning;1;€ 120,00
+INV-1036;17.08.2026;Oakline Studio;Schweiz;Carpet care;;540.00
+INV-1037;2026-04-15;Oakline Studio ;CH;Office cleaning;4;342.00 EUR
+INV-1038;07.06.2026;oakline studio;CH;Deep clean;;1360.00
+INV-1039;22.02.2026;HARBOR PHYSIO;DE;Window cleaning;;324,00
+INV-1040;1/9/2026;pinecrest hotel;AT;Office cleaning;3;€ 256,50
+INV-1041;11.01.2026;Greenleaf Market ;Austria;Deep clean;1;€ 340,00
+INV-1042;05.02.2026;Bluebird Cafe;AT;Carpet care;1;180.00
+INV-1043;8/5/2026;SUMMIT LEGAL;Schweiz;Carpet care;2;360.00 EUR
+INV-1044;2026-02-01;  Northwind Dental ;Germany;Deep clean;2;€ 612,00
+INV-1045;2026-08-09;  Northwind Dental ;germany;Deep clean;4;1360.00
+INV-1046;24.04.2026;  Bluebird Cafe ;austria;Carpet care;2;324.00 EUR
+INV-1042;05.02.2026;Bluebird Cafe;AT;Carpet care;1;180.00
+INV-1047;20.02.2026;  Northwind Dental ;Germany;Deep clean;3;€ 1.020,00
+INV-1048;23.02.2026;Riverside Bakery;AT;Carpet care;4;€ 720,00
+INV-1049;8/1/2026;PINECREST HOTEL;Austria;Window cleaning;4;480.00 EUR
+INV-1050;9/9/2026;BLUEBIRD CAFE;Österreich;Deep clean;2;€ 612,00
+INV-1051;2026-01-06;  Riverside Bakery ;austria;Office cleaning;4;342.00 EUR
+INV-1052;2/27/2026;SUMMIT LEGAL;Schweiz;Carpet care;1;€ 180,00
+INV-1053;2026-05-12;northwind dental;Germany;Carpet care;4;720.00
+INV-1054;1/27/2026;pinecrest hotel;Österreich;Window cleaning;2;€ 240,00
+INV-1055;18.09.2026;northwind dental;Deutschland;Office cleaning;1;95.00 EUR
+INV-1056;16.03.2026;northwind dental;Deutschland;Deep clean;3;€ 1.020,00
+INV-1057;18.08.2026;  Oakline Studio ;Schweiz;Carpet care;1;180,00
+INV-1058;25.06.2026;Oakline Studio ;Switzerland;Office cleaning;4;380,00
+INV-1059;09.06.2026;GREENLEAF MARKET;Österreich;Deep clean;1;306.00 EUR
+INV-1060;1/16/2026;  Pinecrest Hotel ;Österreich;Carpet care;3;540,00
+TOTAL;;;;;;
